@@ -32,10 +32,9 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       selectInput(
-        inputId = "variaveis_excluidas",
-        label = "Excluir variáveis",
-        choices = variaveis,
-        multiple = TRUE
+        inputId = "modelo_familia",
+        label = "Usar distribuição",
+        choices = c("Normal", "Gama")
       ),
       checkboxInput(
         inputId = "transformacao_log",
@@ -43,9 +42,10 @@ ui <- fluidPage(
         value = FALSE
       ),
       selectInput(
-        inputId = "modelo_familia",
-        label = "Usar distribuição",
-        choices = c("Normal", "Gama")
+        inputId = "variaveis_excluidas",
+        label = "Excluir variáveis",
+        choices = variaveis,
+        multiple = TRUE
       ),
       br(),
       actionButton(
@@ -66,7 +66,14 @@ ui <- fluidPage(
       )
     ),
     mainPanel(
-      tableOutput(outputId = "modelo_tabela"),
+      column(
+        width = 6,
+        tableOutput(outputId = "modelo_tabela")
+      ),
+      column(
+        width = 2,
+        tableOutput(outputId = "modelo_qualidade")
+      ),
       plotOutput(outputId = "modelo_grafico")
     )
   )
@@ -121,6 +128,15 @@ server <- function(input, output, session) {
     
   })
   
+  output$modelo_qualidade <- renderTable({
+    
+    req(modelo())
+    
+    modelo()$results %>%
+      select(select:MAE)
+    
+  })
+  
   output$modelo_grafico <- renderPlot({
     
     req(modelo())
@@ -136,22 +152,4 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui, server)
-
-# data("diamonds", package = "ggplot2")
-# rec <- recipe(price ~ ., data = diamonds) %>% 
-#   step_rm(one_of(vars))
-# 
-# prep(rec, diamonds)
-
-
-# modelo <- train(
-#   rec,
-#   diamonds,
-#   method = "gam",
-#   trControl = trainControl("cv", 2)
-# )
-# 
-# modelo$finalModel$smooth[[1]]
-# 
-# modelo$finalModel$terms %>% names
 
