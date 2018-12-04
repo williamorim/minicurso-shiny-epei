@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Minicurso de introdução ao Shiny</title>
+    <meta charset="utf-8">
+    <meta name="author" content="William Amorim" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Minicurso de introdução ao Shiny
+## 2º EPEI
+### William Amorim
+### 4 de dezembro de 2018
+
+---
+
+
+
+
+&lt;br&gt;
+
+# Sobre mim
+
+- IME-USP (2007-2019)
+
+--
+
+&lt;br&gt;
+
+- Pesquisa em poluição do ar
+   - Blog: [www.rpollution.com](www.rpollution.com)
+
+&lt;img src="img/rpollution.png" style="position: fixed; top: 220px; right: 100px; z-index: 1; width: 18%;"&gt;
+
+--
+
+&lt;br&gt;
+
+- Curso-R
+
+&lt;img src="img/cursor.png" style="position: fixed; top: 475px; left: 110px; z-index: 1; width: 30%;"&gt;
+
+---
+
+# Sobre o Shiny
+
+&lt;img src="img/ciclo.png" style=" display: block; margin-left: auto; margin-right: auto;"&gt;
+
+---
+
+# Sobre o Shiny
+
+&lt;img src="img/como-funciona.jpg" style=" display: block; margin-left: auto; margin-right: auto;"&gt;
+
+---
+
+# Neste minicurso
+
+Vamos contruir um app do zero falando sobre:
+
+- como construir a interface do usuário e como conectá-la com o servidor.
+
+- como programar o *server side*.
+
+- os conceitos básicos de reatividade.
+
+
+Não vamos:
+
+- Falar sobre [customização](https://shiny.rstudio.com/articles/#customize).
+
+- Falar de tópicos mais avançados, como [modularização](https://shiny.rstudio.com/articles/#modules), [debbuging](https://shiny.rstudio.com/articles/debugging.html), [tratamento de erros](https://shiny.rstudio.com/articles/#code-quality) e [testes automatizados](https://shiny.rstudio.com/articles/#testing).
+
+- Falar (com detalhes) sobre [Shiny server](https://www.rstudio.com/products/shiny/shiny-server/), [shinyapp.io](https://www.shinyapps.io/) e outras formas de hospedagem.
+
+---
+
+# Para aprender mais
+
+- Para começar: https://shiny.rstudio.com/tutorial/
+
+- Para se aprimorar: https://shiny.rstudio.com/articles/
+
+- Para se inspirar: https://shiny.rstudio.com/gallery/
+
+&lt;br&gt;
+
+&lt;img src="img/cat_book.gif" style=" display: block; margin-left: auto; margin-right: auto;"&gt;
+
+---
+
+# Vamos ao R!
+
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" style=" display: block; margin-left: auto; margin-right: auto;" width = "300" height = "300"&gt;
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

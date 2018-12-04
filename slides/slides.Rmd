@@ -1,0 +1,96 @@
+---
+title: "Minicurso de introdução ao Shiny"
+subtitle: "2º EPEI"
+author: "William Amorim"
+date: "4 de dezembro de 2018"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+<br>
+
+# Sobre mim
+
+- IME-USP (2007-2019)
+
+--
+
+<br>
+
+- Pesquisa em poluição do ar
+   - Blog: [www.rpollution.com](www.rpollution.com)
+
+<img src="img/rpollution.png" style="position: fixed; top: 220px; right: 100px; z-index: 1; width: 18%;">
+
+--
+
+<br>
+
+- Curso-R
+
+<img src="img/cursor.png" style="position: fixed; top: 475px; left: 110px; z-index: 1; width: 30%;">
+
+---
+
+# Sobre o Shiny
+
+<img src="img/ciclo.png" style=" display: block; margin-left: auto; margin-right: auto;">
+
+---
+
+# Sobre o Shiny
+
+<img src="img/como-funciona.jpg" style=" display: block; margin-left: auto; margin-right: auto;">
+
+---
+
+# Neste minicurso
+
+Vamos contruir um app do zero falando sobre:
+
+- como construir a interface do usuário e como conectá-la com o servidor.
+
+- como programar o *server side*.
+
+- os conceitos básicos de reatividade.
+
+
+Não vamos:
+
+- Falar sobre [customização](https://shiny.rstudio.com/articles/#customize).
+
+- Falar de tópicos mais avançados, como [modularização](https://shiny.rstudio.com/articles/#modules), [debbuging](https://shiny.rstudio.com/articles/debugging.html), [tratamento de erros](https://shiny.rstudio.com/articles/#code-quality) e [testes automatizados](https://shiny.rstudio.com/articles/#testing).
+
+- Falar (com detalhes) sobre [Shiny server](https://www.rstudio.com/products/shiny/shiny-server/), [shinyapp.io](https://www.shinyapps.io/) e outras formas de hospedagem.
+
+---
+
+# Para aprender mais
+
+- Para começar: https://shiny.rstudio.com/tutorial/
+
+- Para se aprimorar: https://shiny.rstudio.com/articles/
+
+- Para se inspirar: https://shiny.rstudio.com/gallery/
+
+<br>
+
+<img src="img/cat_book.gif" style=" display: block; margin-left: auto; margin-right: auto;">
+
+---
+
+# Vamos ao R!
+
+<br>
+<br>
+
+<img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" style=" display: block; margin-left: auto; margin-right: auto;" width = "300" height = "300">
